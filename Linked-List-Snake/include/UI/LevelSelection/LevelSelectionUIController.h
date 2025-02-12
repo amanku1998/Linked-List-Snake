@@ -11,6 +11,7 @@ namespace UI
 		class LevelSelectionUIController : public Interface::IUIController
 		{
 		private:
+			// Constants:
 			const float button_width = 400.f;
 			const float button_height = 140.f;
 

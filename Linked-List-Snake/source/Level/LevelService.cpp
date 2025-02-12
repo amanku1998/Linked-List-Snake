@@ -1,5 +1,5 @@
-#include "../../include/Level/LevelService.h"
-#include "../../include/Level/LevelController.h"
+#include "Level/LevelService.h"
+#include "Level/LevelController.h"
 #include "Global/ServiceLocator.h"
 #include "Level/LevelModel.h"
 
@@ -17,7 +17,7 @@ namespace Level
 	LevelService::~LevelService()
 	{
 		destroy();
-	}	
+	}
 
 	void LevelService::createLevelController()
 	{
@@ -32,8 +32,8 @@ namespace Level
 	void LevelService::update()
 	{
 		level_controller->update();
-	}	
-	
+	}
+
 	void LevelService::render()
 	{
 		level_controller->render();

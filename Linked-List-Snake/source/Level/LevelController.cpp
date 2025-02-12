@@ -12,7 +12,8 @@ namespace Level
 
 	LevelController::~LevelController()
 	{
-		destroy();
+		delete level_model;
+		delete level_view;
 	}
 
 	void LevelController::initialize()
@@ -39,11 +40,5 @@ namespace Level
 	float LevelController::getCellHeight()
 	{
 		return level_model->getCellHeight();
-	}
-
-	void LevelController::destroy()
-	{
-		delete level_model;
-		delete level_view;
 	}
 }

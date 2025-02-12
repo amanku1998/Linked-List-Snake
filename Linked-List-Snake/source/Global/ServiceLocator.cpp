@@ -65,7 +65,7 @@ namespace Global
 
 		if (GameService::getGameState() == GameState::GAMEPLAY)
 		{
-			level_service->update();
+			level_service->render();
 		}
 
 		ui_service->render();
@@ -93,9 +93,9 @@ namespace Global
 
 	SoundService* ServiceLocator::getSoundService() { return sound_service; }
 
-	UIService* ServiceLocator::getUIService() { return ui_service; }
-
 	Level::LevelService* ServiceLocator::getLevelService() { return level_service; }
+
+	UIService* ServiceLocator::getUIService() { return ui_service; }
 
 	Time::TimeService* ServiceLocator::getTimeService() { return time_service; }
 

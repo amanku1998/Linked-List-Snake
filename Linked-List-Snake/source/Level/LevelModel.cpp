@@ -1,4 +1,4 @@
-#include "../../include/Level/LevelModel.h"
+#include "Level/LevelModel.h"
 
 namespace Level
 {
@@ -21,5 +21,4 @@ namespace Level
 	{
 		return cell_height;
 	}
-
 }

@@ -31,6 +31,7 @@ namespace UI
 		level_selection_ui_controller = new LevelSelectionUIController();
 		instructions_screen_ui_controller = new InstructionsScreenUIController();
 		credits_screen_ui_controller = new CreditsScreenUIController();
+
 	}
 
 	UIService::~UIService()
@@ -99,6 +100,7 @@ namespace UI
 	{
 		delete(splash_screen_controller);
 		delete(main_menu_controller);
+		delete(level_selection_ui_controller);
 		delete(instructions_screen_ui_controller);
 		delete(credits_screen_ui_controller);
 	}

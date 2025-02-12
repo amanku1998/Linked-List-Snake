@@ -16,8 +16,8 @@ namespace UI
     using namespace Sound;
     using namespace Main;
 
-	namespace LevelSelection
-	{
+    namespace LevelSelection
+    {
         LevelSelectionUIController::LevelSelectionUIController()
         {
             createButtons();
@@ -129,5 +129,5 @@ namespace UI
             delete (level_two_button);
             delete (menu_button);
         }
-	}
+    }
 }
