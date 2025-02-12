@@ -26,6 +26,8 @@ namespace UI
 			UI::UIElement::ButtonView* level_two_button;
 			UI::UIElement::ButtonView* menu_button;
 
+			void createImage();
+			void createButtons();
 			void initializeBackgroundImage();
 			void initializeButtons();
 			void registerButtonCallback();

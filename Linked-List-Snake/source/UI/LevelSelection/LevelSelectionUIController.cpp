@@ -15,17 +15,13 @@ namespace UI
     using namespace Event;
     using namespace Sound;
     using namespace Main;
-    using namespace Level;
 
 	namespace LevelSelection
 	{
         LevelSelectionUIController::LevelSelectionUIController()
         {
-            level_one_button = new ButtonView();
-            level_two_button = new ButtonView();
-            menu_button = new ButtonView();
-
-            background_image = new ImageView();
+            createButtons();
+            createImage();
         }
 
         LevelSelectionUIController::~LevelSelectionUIController()
@@ -38,6 +34,18 @@ namespace UI
             initializeBackgroundImage();
             initializeButtons();
             registerButtonCallback();
+        }
+
+        void LevelSelectionUIController::createImage()
+        {
+            background_image = new ImageView();
+        }
+
+        void LevelSelectionUIController::createButtons()
+        {
+            level_one_button = new ButtonView();
+            level_two_button = new ButtonView();
+            menu_button = new ButtonView();
         }
 
         void LevelSelectionUIController::initializeBackgroundImage()
@@ -73,13 +81,15 @@ namespace UI
         void LevelSelectionUIController::levelOneButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-            GameService::setGameState(GameState::LINKED_LIST_SELECTION);
+            GameService::setGameState(GameState::GAMEPLAY);
+            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
         }
 
         void LevelSelectionUIController::levelTwoButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
-            GameService::setGameState(GameState::LINKED_LIST_SELECTION);
+            GameService::setGameState(GameState::GAMEPLAY);
+            ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
         }
 
         void LevelSelectionUIController::menuButtonCallback()
@@ -90,10 +100,18 @@ namespace UI
 
         void LevelSelectionUIController::update()
         {
+            background_image->update();
+            level_one_button->update();
+            level_two_button->update();
+            menu_button->update();
         }
 
         void LevelSelectionUIController::render()
         {
+            background_image->render();
+            level_one_button->render();
+            level_two_button->render();
+            menu_button->render();
         }
 
         void LevelSelectionUIController::show()

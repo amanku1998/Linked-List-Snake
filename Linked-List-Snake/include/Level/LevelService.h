@@ -8,9 +8,6 @@ namespace Level
 	class LevelService
 	{
 	public:
-		LevelController* level_controller;
-		LevelNumber current_level;
-
 		LevelService();
 		~LevelService();
 
@@ -21,6 +18,8 @@ namespace Level
 		void createLevel(LevelNumber level_to_load);
 
 	private:
+		LevelController* level_controller;
+		LevelNumber current_level;
 
 		void createLevelController();
 		void destroy();

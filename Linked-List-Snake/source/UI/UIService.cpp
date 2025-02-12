@@ -12,8 +12,6 @@ namespace UI
 	using namespace Credits;
 	using namespace UIElement;
 	using namespace Interface;
-	using namespace Credits;
-	using namespace Instructions;
 
 	UIService::UIService()
 	{
@@ -82,6 +80,9 @@ namespace UI
 
 		case GameState::MAIN_MENU:
 			return main_menu_controller;
+
+		case GameState::LEVEL_SELECTION:
+			return level_selection_ui_controller;
 
 		case GameState::INSTRUCTIONS:
 			return instructions_screen_ui_controller;

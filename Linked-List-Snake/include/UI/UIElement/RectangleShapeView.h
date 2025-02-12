@@ -18,6 +18,11 @@ namespace UI
 			virtual void update() override;
 			virtual void render() override;
 
+			virtual void setSize(sf::Vector2f rectangle_size);
+			virtual void setPosition(sf::Vector2f rectangle_position);
+			virtual void setFillColor(sf::Color fill_color);
+			virtual void setOutlineColor(sf::Color outline_color);
+			virtual void setOutlineThickness(int outline_thikness);
 		};
 	}
 }

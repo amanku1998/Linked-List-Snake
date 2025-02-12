@@ -8,6 +8,11 @@ namespace Level
 
 	class LevelController
 	{
+
+	private:
+		LevelModel* level_model;
+		LevelView* level_view;
+
 	public:
 
 		LevelController();
@@ -21,9 +26,5 @@ namespace Level
 
 		float getCellWidth();
 		float getCellHeight();
-
-	private:
-		LevelModel* level_model;
-		LevelView* level_view;
 	};
 }

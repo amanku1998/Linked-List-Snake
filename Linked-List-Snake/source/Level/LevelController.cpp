@@ -2,7 +2,6 @@
 #include "Level/LevelModel.h"
 #include "Level/LevelView.h"
 
-
 namespace Level
 {
 	LevelController::LevelController()
