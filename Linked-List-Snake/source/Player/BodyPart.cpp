@@ -37,10 +37,37 @@ namespace Player
 
 	sf::Vector2f BodyPart::getBodyPartScreenPosition()
 	{
-		float x_screen_position = 0;
-		float y_screen_position = 0;
+		float x_screen_position = LevelView::border_offset_left + (grid_position.x * bodypart_width) + (bodypart_width / 2);
+		float y_screen_position = LevelView::border_offset_top + (grid_position.y * bodypart_height) + (bodypart_height / 2);
 
 		return sf::Vector2f(x_screen_position, y_screen_position);
+	}
+
+	float BodyPart::getRotationAngle()
+	{
+		switch (direction)
+		{
+		case Player::Direction::UP:
+			return 270.f;
+		case Player::Direction::DOWN:
+			return 90.f;
+		case Player::Direction::LEFT:
+			return 180.f;
+		case Player::Direction::RIGHT:
+			return 0;
+		}
+	}
+
+	void BodyPart::setDirection(Direction direction)
+	{
+		this->direction = direction;
+	}
+
+	void BodyPart::updatePosition()
+	{
+		bodypart_image->setPosition(getBodyPartScreenPosition());
+		bodypart_image->setRotation(getRotationAngle());
+		bodypart_image->update();
 	}
 
 	void BodyPart::render()
