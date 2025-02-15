@@ -1,5 +1,6 @@
 #include"Player/BodyPart.h"
 #include "Level/LevelView.h"
+#include "Level/LevelModel.h"
 #include "Global/Config.h"
 
 namespace Player
@@ -70,6 +71,50 @@ namespace Player
 		bodypart_image->update();
 	}
 
+	sf::Vector2i BodyPart::getNextPosition()
+	{
+		switch (direction)
+		{
+		case Direction::UP:
+			return getNextPositionUp();
+		case Direction::DOWN:
+			return getNextPositionDown();
+		case Direction::LEFT:
+			return getNextPositionLeft();
+		case Direction::RIGHT:
+			return getNextPositionRight();
+		default:
+			return grid_position;
+		}
+	}
+
+	sf::Vector2i BodyPart::getNextPositionUp()
+	{
+		return sf::Vector2i(grid_position.x, (grid_position.y - 1 + (LevelModel::number_of_rows)) % (LevelModel::number_of_rows));
+	}
+
+	sf::Vector2i BodyPart::getNextPositionDown()
+	{
+		return sf::Vector2i(grid_position.x, (grid_position.y + 1) % (LevelModel::number_of_rows));
+	}
+
+	sf::Vector2i BodyPart::getNextPositionLeft()
+	{
+		//return sf::Vector2i(grid_position.x - 1, grid_position.y);
+		return sf::Vector2i((grid_position.x - 1 + LevelModel::number_of_columns) % (LevelModel::number_of_columns), grid_position.y);
+	}
+
+	sf::Vector2i BodyPart::getNextPositionRight()
+	{
+		//return sf::Vector2i(grid_position.x + 1, grid_position.y);
+		return sf::Vector2i((grid_position.x + 1) % (LevelModel::number_of_columns), grid_position.y);
+	}
+
+	void BodyPart::setPosition(sf::Vector2i position)
+	{
+		grid_position = position;
+	}
+
 	void BodyPart::render()
 	{
 		bodypart_image->render();
@@ -78,6 +123,16 @@ namespace Player
 	void BodyPart::createBodyPartImage()
 	{
 		bodypart_image = new ImageView();
+	}
+
+	sf::Vector2i BodyPart::getPosition()
+	{
+		return grid_position;
+	}
+
+	Direction BodyPart::getDirection()
+	{
+		return direction;;
 	}
 
 	void BodyPart::destroy()
