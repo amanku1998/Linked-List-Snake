@@ -23,10 +23,13 @@ namespace Player
 		const Direction default_direction = Direction::RIGHT;
 
 		SnakeState current_snake_state;
+		float elapsed_duration;
 		Direction current_snake_direction;
 
+		const float movement_frame_duration = 0.1f;
+
 		void processPlayerInput();
-		void updateSnakeDirection(Direction current_node_direction);
+		void updateSnakeDirection();
 		void moveSnake();
 		void processSnakeCollision();
 		void handleRestart();
@@ -50,5 +53,6 @@ namespace Player
 		SnakeState getSnakeState();
 
 		void createLinkedList();
+		void delayedUpdate();
 	};
 }
