@@ -27,5 +27,7 @@ namespace LinkedList
 		void updateNodePosition();
 
 		bool processNodeCollision();
+		void removeNodeAtHead();
+		void removeAllNodes();
 	};
 }
