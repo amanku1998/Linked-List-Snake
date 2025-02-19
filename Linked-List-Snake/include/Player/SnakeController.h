@@ -24,6 +24,7 @@ namespace Player
 
 		SnakeState current_snake_state;
 		float elapsed_duration;
+		float restart_counter;
 		Direction current_snake_direction;
 
 		const float movement_frame_duration = 0.1f;
@@ -39,6 +40,7 @@ namespace Player
 	public:
 
 		SingleLinkedList* single_linked_list;
+		const float restart_duration = 2.f;
 
 		SnakeController();
 		~SnakeController();
