@@ -4,8 +4,6 @@
 
 namespace Level
 {
-	using namespace Element;
-
 	class LevelController;
 
 	class LevelService
