@@ -1,8 +1,11 @@
 #pragma once
 #include "../../include/Level/LevelNumber.h"
+//#include "LevelModel.h"
 
 namespace Level
 {
+	using namespace Element;
+
 	class LevelController;
 
 	class LevelService
@@ -18,6 +21,7 @@ namespace Level
 		void createLevel(LevelNumber level_to_load);
 		float getCellWidth();
 		float getCellHeight();
+		void spawnLevelElements(LevelNumber level_to_load);
 
 	private:
 		LevelController* level_controller;
