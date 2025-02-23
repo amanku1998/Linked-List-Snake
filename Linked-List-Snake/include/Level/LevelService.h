@@ -29,5 +29,6 @@ namespace Level
 		void destroy();
 
 		void spawnPlayer();
+		void spawnFood();
 	};
 }

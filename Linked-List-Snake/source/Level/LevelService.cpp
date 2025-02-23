@@ -43,6 +43,7 @@ namespace Level
 	{
 		current_level = level_to_load;
 		spawnLevelElements(level_to_load);
+		spawnFood();
 		spawnPlayer();
 	}
 
@@ -73,5 +74,13 @@ namespace Level
 	void LevelService::destroy()
 	{
 		delete level_controller;
+	}
+
+	void LevelService::spawnFood()
+	{
+		float cell_width = level_controller->getCellWidth();
+		float cell_height = level_controller->getCellHeight();
+
+		ServiceLocator::getInstance()->getFoodService()->startFoodSpawning();
 	}
 }
