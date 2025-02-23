@@ -64,5 +64,9 @@ namespace Player
 		void createLinkedList();
 		void delayedUpdate();
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
+
+		void processBodyCollision();
+		void processElementsCollision();
+		void processFoodCollision();
 	};
 }
