@@ -16,6 +16,9 @@ namespace Food
 		float cell_width;
 		float cell_height;
 
+		std::default_random_engine random_engine;
+		std::random_device random_device;
+
 		FoodItem* createFood(sf::Vector2i position, FoodType type);
 		void spawnFood();
 
@@ -30,5 +33,11 @@ namespace Food
 		void render();
 
 		void startFoodSpawning();
+		sf::Vector2i getRandomPosition();
+
+		bool isValidPosition(std::vector<sf::Vector2i> position_data, sf::Vector2i food_position);
+		sf::Vector2i getValidSpawnPosition();
+
+		FoodType getRandomFoodType();
 	};
 }

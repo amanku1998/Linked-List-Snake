@@ -1,5 +1,5 @@
-#include "../../include/Player/PlayerService.h"
-#include "../../include/Player/SnakeController.h"
+#include "Player/PlayerService.h"
+#include "Player/SnakeController.h"
 
 namespace Player
 {
@@ -37,6 +37,11 @@ namespace Player
 	void PlayerService::spawnPlayer()
 	{
 		snake_controller->spawnSnake();
+	}
+
+	std::vector<sf::Vector2i> PlayerService::getCurrentSnakePositionList()
+	{
+		return snake_controller->getCurrentSnakePositionList();
 	}
 
 	void PlayerService::destroy()
