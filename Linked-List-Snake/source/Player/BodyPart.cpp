@@ -135,6 +135,23 @@ namespace Player
 		return direction;;
 	}
 
+	sf::Vector2i BodyPart::getPrevPosition()
+	{
+		switch (direction)
+		{
+		case Direction::UP:
+			return getNextPositionDown();
+		case Direction::DOWN:
+			return getNextPositionUp();
+		case Direction::RIGHT:
+			return getNextPositionLeft();
+		case Direction::LEFT:
+			return getNextPositionRight();
+		default:
+			return grid_position;
+		}
+	}
+
 	void BodyPart::destroy()
 	{
 		delete bodypart_image;

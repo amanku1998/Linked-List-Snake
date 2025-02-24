@@ -3,6 +3,13 @@
 
 namespace LinkedList
 {
+	enum class Operation
+	{
+		HEAD,
+		MID,
+		TAIL,
+	};
+
 	class SingleLinkedList
 	{
 	protected:
@@ -21,7 +28,7 @@ namespace LinkedList
 
 		void initialize(float width, float height, sf::Vector2i position, Direction direction);
 		void render();
-		sf::Vector2i getNewNodePosition(Node* reference_node);
+		//sf::Vector2i getNewNodePosition(Node* reference_node);
 		void insertNodeAtTail();
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();
@@ -31,5 +38,8 @@ namespace LinkedList
 		void removeAllNodes();
 		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
+		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
+		void initializeNode(Node* new_node, Node* reference_node, Operation operation);
+
 	};
 }

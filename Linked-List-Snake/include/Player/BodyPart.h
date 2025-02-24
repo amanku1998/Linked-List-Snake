@@ -41,5 +41,6 @@ namespace Player
 		Direction getDirection();
 
 		void render();
+		sf::Vector2i getPrevPosition();
 	};
 }
