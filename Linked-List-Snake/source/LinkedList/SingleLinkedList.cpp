@@ -156,4 +156,8 @@ namespace LinkedList
 		return nodes_position_list;
 	}
 
+	Node* SingleLinkedList::getHeadNode()
+	{
+		return head_node;
+	}
 }

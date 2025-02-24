@@ -1,8 +1,8 @@
 #include "Food/FoodItem.h"
 #include "Global/ServiceLocator.h"
-#include "Food/FoodType.h"
-#include "Global/Config.h"
 #include "Level/LevelView.h"
+#include "Global/Config.h"
+#include "Food/FoodType.h"
 
 namespace Food
 {
@@ -79,6 +79,16 @@ namespace Food
 		food_image->render();
 	}
 
+	FoodType FoodItem::getFoodType()
+	{
+		return food_type;
+	}
+
+	sf::Vector2i FoodItem::getFoodPosition()
+	{
+		return grid_position;
+	}
+
 	sf::Vector2f FoodItem::getFoodImagePosition()
 	{
 		float screen_position_x = LevelView::border_offset_left + (cell_width * grid_position.x);
@@ -86,10 +96,4 @@ namespace Food
 
 		return sf::Vector2f(screen_position_x, screen_position_y);
 	}
-
-	FoodType FoodItem::getFoodType()
-	{
-		return food_type;
-	}
-
 }

@@ -5,6 +5,7 @@
 #include "Element/Obstacle.h"
 #include "Level/LevelModel.h"
 #include <Element/ElementData.h>
+#include <LinkedList/Node.h>
 
 namespace Element
 {
@@ -63,5 +64,20 @@ namespace Element
 		}
 
 		return elements_position_list;
+	}
+
+	bool ElementService::processElementsCollision(LinkedList::Node* head_node)
+	{
+		for (int i = 0; i < obstacle_list.size(); i++)
+		{
+			//Check both heads next position & heads current position
+			if (obstacle_list[i]->getObstaclePosition() == head_node->body_part.getNextPosition() ||
+				obstacle_list[i]->getObstaclePosition() == head_node->body_part.getPosition())
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

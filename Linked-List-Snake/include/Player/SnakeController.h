@@ -2,10 +2,12 @@
 #include <SFML/System/Vector2.hpp>
 #include "Direction.h"
 #include "LinkedList/SingleLinkedList.h"
+#include "Food/FoodType.h"
 
 namespace Player
 {
 	using namespace LinkedList;
+	using namespace Food;
 
 	enum class InputState
 	{
@@ -68,5 +70,6 @@ namespace Player
 		void processBodyCollision();
 		void processElementsCollision();
 		void processFoodCollision();
+		void OnFoodCollected(FoodType food_type);
 	};
 }

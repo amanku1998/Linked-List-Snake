@@ -5,7 +5,7 @@ namespace LinkedList
 {
 	class SingleLinkedList
 	{
-	private:
+	protected:
 		Node* head_node;
 
 		float node_width;
@@ -29,6 +29,7 @@ namespace LinkedList
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
+		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 	};
 }
