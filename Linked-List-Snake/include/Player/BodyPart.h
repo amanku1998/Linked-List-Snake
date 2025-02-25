@@ -27,6 +27,7 @@ namespace Player
 		sf::Vector2i getNextPositionRight();
 
 	public:
+		Direction previous_direction;
 
 		BodyPart();
 		~BodyPart();
@@ -42,5 +43,7 @@ namespace Player
 
 		void render();
 		sf::Vector2i getPrevPosition();
+		Direction getPreviousDirection();
+
 	};
 }
