@@ -153,6 +153,11 @@ namespace Player
 		}
 	}
 
+	Direction BodyPart::getPreviousDirection()
+	{
+		return previous_direction;
+	}
+
 	void BodyPart::destroy()
 	{
 		delete bodypart_image;
