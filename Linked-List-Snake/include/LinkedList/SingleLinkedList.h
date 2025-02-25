@@ -34,6 +34,8 @@ namespace LinkedList
 		//sf::Vector2i getNewNodePosition(Node* reference_node);
 		void insertNodeAtHead();
 		void insertNodeAtTail();
+		void insertNodeAtIndex(int index);
+		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		void updateNodeDirection(Direction direction_to_set);
 		void updateNodePosition();
 
