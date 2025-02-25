@@ -43,6 +43,10 @@ namespace LinkedList
 		bool processNodeCollision();
 		void removeNodeAtHead();
 		void removeAllNodes();
+		void shiftNodesAfterRemoval(Node* cur_node);
+		void removeNodeAtIndex(int index);
+		void removeNodeAt(int index);
+		void removeNodeAtMiddle();
 		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
