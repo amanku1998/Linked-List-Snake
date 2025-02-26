@@ -9,6 +9,26 @@ namespace Player
 	using namespace LinkedList;
 	using namespace Food;
 
+	enum class TimeComplexity
+	{
+		NONE,
+		ONE,
+		N,
+	};
+
+	enum class LinkedListOperations
+	{
+		NONE,
+		INSERT_AT_HEAD,
+		INSERT_AT_TAIL,
+		INSERT_AT_MID,
+		REMOVE_AT_HEAD,
+		REMOVE_AT_TAIL,
+		REMOVE_AT_MID,
+		DELETE_HALF_LIST,
+		REVERSE_LIST,
+	};
+
 	enum class InputState
 	{
 		WAITING,
@@ -38,6 +58,10 @@ namespace Player
 
 		const float movement_frame_duration = 0.1f;
 
+		int player_score;
+		TimeComplexity time_complexity;
+		LinkedListOperations last_linked_list_operation;
+
 		void processPlayerInput();
 		void updateSnakeDirection();
 		void moveSnake();
@@ -62,6 +86,9 @@ namespace Player
 		void respawnSnake();
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
+		int getPlayerScore();
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
 
 		void createLinkedList();
 		void delayedUpdate();

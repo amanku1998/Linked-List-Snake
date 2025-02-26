@@ -20,6 +20,7 @@ namespace Level
 		float getCellWidth();
 		float getCellHeight();
 		void spawnLevelElements(LevelNumber level_to_load);
+		LevelNumber getCurrentLevel();
 
 	private:
 		LevelController* level_controller;
