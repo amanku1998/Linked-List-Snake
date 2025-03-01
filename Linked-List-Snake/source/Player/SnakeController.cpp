@@ -25,7 +25,6 @@ namespace Player
 	SnakeController::SnakeController()
 	{
 		linked_list = nullptr;
-		createLinkedList();
 	}
 
 	SnakeController::~SnakeController()
@@ -33,20 +32,31 @@ namespace Player
 		destroy();
 	}
 
-	void SnakeController::createLinkedList()
+	void SnakeController::createLinkedList(LinkedListType level_type)
 	{
-		linked_list = new SingleLinkedList();
+		switch (level_type)
+		{
+		case LinkedListType::SINGLE_LINKED_LIST:
+			linked_list = new SingleLinkedList();
+			break;
+		case LinkedListType::DOUBLE_LINKED_LIST:
+			linked_list = new DoubleLinkedList();
+			break;
+		}
+
+		initializeLinkedList();
 	}
 
-	void SnakeController::initialize()
+	void SnakeController::initializeLinkedList()
 	{
 		float width = ServiceLocator::getInstance()->getLevelService()->getCellWidth();
 		float height = ServiceLocator::getInstance()->getLevelService()->getCellHeight();
 
 		reset();
-
 		linked_list->initialize(width, height, default_position, default_direction);
 	}
+
+	void SnakeController::initialize() {}
 
 	void SnakeController::update()
 	{
@@ -55,10 +65,6 @@ namespace Player
 		case SnakeState::ALIVE:
 			processPlayerInput();
 			delayedUpdate();
-			//updateSnakeDirection();
-			//processSnakeCollision();
-			//moveSnake();
-
 			break;
 
 		case SnakeState::DEAD:

@@ -58,7 +58,7 @@ namespace Level
 
 	void LevelService::spawnPlayer()
 	{
-		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer();
+		ServiceLocator::getInstance()->getPlayerService()->spawnPlayer(current_linked_list_type);
 	}
 
 	float LevelService::getCellWidth()
