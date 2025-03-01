@@ -1,15 +1,15 @@
 #pragma once
-#include"LinkedList/SingleLinkedList.h"
+#include"LinkedListLib/SingleLinked/SingleLinkedList.h"
 #include <vector>
 #include <SFML/System/Vector2.hpp>
-#include "LinkedList/Node.h"
+#include "LinkedListLib/Node.h"
 
 namespace Element
 {
 	class Obstacle;
 	struct ElementData;
 
-	using namespace LinkedList;
+	using namespace LinkedListLib;
 
 	class ElementService
 	{
@@ -29,6 +29,6 @@ namespace Element
 		void spawnObstacle(sf::Vector2i position, float cell_width, float cell_height);
 
 		std::vector<sf::Vector2i> getElementsPositionList();
-		bool processElementsCollision(LinkedList::Node* head_node);
+		bool processElementsCollision(LinkedListLib::Node* head_node);
 	};
 }

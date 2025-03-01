@@ -1,12 +1,13 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "Direction.h"
-#include "LinkedList/SingleLinkedList.h"
+#include "LinkedListLib/Node.h"
+#include "LinkedListLib/LinkedList.h"
 #include "Food/FoodType.h"
 
 namespace Player
 {
-	using namespace LinkedList;
+	using namespace LinkedListLib;
 	using namespace Food;
 
 	enum class TimeComplexity
@@ -72,7 +73,7 @@ namespace Player
 
 	public:
 
-		SingleLinkedList* single_linked_list;
+		LinkedList* linked_list;
 		const float restart_duration = 2.f;
 
 		SnakeController();
