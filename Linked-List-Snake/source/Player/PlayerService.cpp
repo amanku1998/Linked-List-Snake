@@ -65,4 +65,8 @@ namespace Player
 		delete (snake_controller);
 	}
 
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
+	}
 }

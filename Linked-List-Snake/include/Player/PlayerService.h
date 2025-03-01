@@ -29,6 +29,7 @@ namespace Player
 
 		void spawnPlayer(LinkedListType level_type);
 		int getPlayerScore();
+		bool isPlayerDead();
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 	};
 

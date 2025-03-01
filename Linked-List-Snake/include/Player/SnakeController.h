@@ -102,5 +102,6 @@ namespace Player
 		void processElementsCollision();
 		void processFoodCollision();
 		void OnFoodCollected(FoodType food_type);
+		bool isSnakeDead();
 	};
 }
