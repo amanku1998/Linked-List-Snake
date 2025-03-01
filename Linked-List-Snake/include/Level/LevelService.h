@@ -16,20 +16,25 @@ namespace Level
 		void update();
 		void render();
 
-		void createLevel(LevelNumber level_to_load);
+		void createLevel(LinkedListType linked_list_type);
+		void setCurrentLevelNumber(LevelNumber level_to_load);
+
 		float getCellWidth();
 		float getCellHeight();
-		void spawnLevelElements(LevelNumber level_to_load);
+
 		LevelNumber getCurrentLevel();
+		LinkedListType getCurrentLinkedListType();
 
 	private:
 		LevelController* level_controller;
 		LevelNumber current_level;
+		LinkedListType current_linked_list_type;
 
 		void createLevelController();
 		void destroy();
 
 		void spawnPlayer();
 		void spawnFood();
+		void spawnLevelElements(LevelNumber level_to_load);
 	};
 }
